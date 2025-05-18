@@ -192,5 +192,9 @@ def update_request_type_chart(selected_country):
     return fig
 
 
+import os
+
 if __name__ == '__main__':
-    app.run(debug=True)
+    port = int(os.environ.get("PORT", 8050))  # Get the PORT from Render's environment
+    app.run(host="0.0.0.0", port=port, debug=True)
+
